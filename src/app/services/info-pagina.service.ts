@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { InfoPagina } from '../interfaces/info-pagina.interface';
+import { Equipo } from '../interfaces/equipo.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { InfoPagina } from '../interfaces/info-pagina.interface';
 export class InfoPaginaService {
   info: InfoPagina = {};
   cargada = false;
-  equipo: any[] = [];
+  equipo: Equipo[] = [];
 
   constructor(private http: HttpClient) {
     this.cargarInfo();
@@ -28,9 +29,8 @@ export class InfoPaginaService {
 
   private cargaEquipo() {
     this.http.get('https://angular-html-2cc31.firebaseio.com/equipo.json').subscribe(
-      (resp: any[]) => {
+      (resp: Equipo[]) => {
         this.equipo = resp;
-        // console.log(resp);
       }
     );
   }
