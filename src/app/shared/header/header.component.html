@@ -24,14 +24,14 @@
                     <a routerLink="about" class="rk-menu__link">About</a>
                 </li>
             </ul>
-            <form class="rk-search">
-                <input type="text" placeholder="Search" id="urku-search" class="rk-search-field">
+            <div class="rk-search">
+                <input type="text" placeholder="Buscar..." id="urku-search" class="rk-search-field" (keyup.enter)="buscarProducto(txtBuscar.value)" #txtBuscar>
                 <label for="urku-search">
-                <svg>
-                    <use xlink:href="assets/img/symbols.svg#icon-search"></use>
-                </svg>
-            </label>
-            </form>
+                    <svg>
+                        <use xlink:href="assets/img/symbols.svg#icon-search"></use>
+                    </svg>
+                </label>
+            </div>
         </nav>
     </div>
 </header>

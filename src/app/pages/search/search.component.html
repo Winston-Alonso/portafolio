@@ -1,0 +1,9 @@
+<div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
+    <a [routerLink]="['/item', producto.cod]" class="animated fast zoomIn rk-item ae-masonry__item" *ngFor="let producto of _servicio.productosFil">
+        <img src="assets/productos/{{ producto.url }}.jpg" alt="">
+        <div class="item-meta">
+            <h2>{{ producto.titulo }}</h2>
+            <p>{{ producto.categoria | uppercase }}</p>
+        </div>
+    </a>
+</div>
